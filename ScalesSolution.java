@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 
 public class ScalesSolution
 {
@@ -82,5 +82,39 @@ public class ScalesSolution
 	{
 		print();
 		System.out.println();
+	}
+	
+	public void SmallChange(String str)
+	//Take a random number between 1 and the nth element in the array. Take that elemtn
+	//change that element, run a fitness test
+	{
+		int leng = str.length();
+		String newstr = new String();
+		int x = (int) (1 + Math.random() * leng - 1);
+		for(int i = 0; i < leng; i ++)
+		{
+			char thischar = str.charAt(i);
+			if(i == x)
+			{
+				if(thischar == '0')
+				{
+					thischar = '1';
+					newstr += thischar;
+					System.out.println("zero");
+				}
+				else
+				{
+					thischar = '0';
+					newstr += thischar;
+					System.out.println("one" + x + " is the value of x");
+				}
+			}
+			else
+			{
+				newstr += thischar;
+			}
+		}
+		System.out.println(x + " is the random value " + newstr + " is the new string ");
+		return newstr;
 	}
 }
